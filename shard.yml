@@ -4,16 +4,12 @@ version: 0.1.0
 authors:
   - Andrew Crotwell <awcrotwell@gmail.com>
 
-# description: |
-#   Short description of snowpack-cr
+description: |
+  Short description of snowpack-cr
 
-# dependencies:
-#   pg:
-#     github: will/crystal-pg
-#     version: "~> 0.5"
-
-# development_dependencies:
-#   webmock:
-#     github: manastech/webmock.cr
+development_dependencies:
+  ameba:
+    github: veelenga/ameba
+    version: 0.13.3
 
 license: MIT
