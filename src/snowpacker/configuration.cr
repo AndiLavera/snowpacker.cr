@@ -1,4 +1,4 @@
-module Snowpack
+module Snowpacker
   class Configuration
     property config_path = ""
     property config_file = ""

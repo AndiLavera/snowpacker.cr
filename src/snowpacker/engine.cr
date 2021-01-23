@@ -1,7 +1,6 @@
 require "./configuration"
-require "./exceptions"
 
-module Snowpack
+module Snowpacker
   class Engine
     Log = ::Log.for(self)
 

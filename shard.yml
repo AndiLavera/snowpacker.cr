@@ -1,8 +1,8 @@
-name: snowpack-cr
+name: snowpacker
 version: 0.1.0
 
-# authors:
-#   - name <email@example.com>
+authors:
+  - Andrew Crotwell <awcrotwell@gmail.com>
 
 # description: |
 #   Short description of snowpack-cr
@@ -16,4 +16,4 @@ version: 0.1.0
 #   webmock:
 #     github: manastech/webmock.cr
 
-# license: MIT
+license: MIT

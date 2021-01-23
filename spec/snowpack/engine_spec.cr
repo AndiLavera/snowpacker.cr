@@ -1,6 +1,6 @@
 require "../spec_helper"
 
-module Snowpack
+module Snowpacker
   describe Engine do
     engine = Engine.configure do |config|
       config.config_path = "public"
@@ -29,7 +29,7 @@ module Snowpack
     end
 
     it "cannot be configured twice" do
-      expect_raises(Snowpack::DuplicateInstanceError) do
+      expect_raises(Snowpacker::DuplicateInstanceError) do
         Engine.configure do |config|
           config.config_path = "public"
           config.config_file = "snowpack.config.js"

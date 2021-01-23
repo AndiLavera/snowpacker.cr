@@ -1,2 +1,2 @@
-require "../src/snowpack"
+require "../src/snowpacker"
 require "spec"
