@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "src/snowpack/package/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "Andrew Crotwell",
   "license": "MIT",
   "dependencies": {

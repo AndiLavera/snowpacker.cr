@@ -6,7 +6,11 @@ module Snowpacker
 
     property config : Configuration
 
-    def self.instance(config : Configuration)
+    def self.instance
+      @@instance
+    end
+
+    def self.configure(config : Configuration)
       @@instance ||= new(config)
     end
 
@@ -15,9 +19,13 @@ module Snowpacker
 
       config = Configuration.new
       yield config
-      Engine.instance(config)
+      Engine.configure(config)
     end
 
     def initialize(@config : Configuration); end
+
+    def flush
+      @@instance = nil
+    end
   end
 end

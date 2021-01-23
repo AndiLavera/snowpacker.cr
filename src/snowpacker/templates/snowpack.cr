@@ -1,34 +1,36 @@
-Snowpack.configure do |snowpacker|
+require "../engine"
+
+Snowpacker::Engine.configure do |config|
   # Where to build snowpack to (out dir)
-  snowpacker.build_dir = "public"
+  config.build_dir = "public"
 
   # url to use for assets IE: /snowpacker/xyz.css, gets built to public/frontend
-  snowpacker.output_dir = "snowpacker"
+  config.output_dir = "snowpacker"
 
   # Where to find the config directory
-  snowpacker.config_path = File.join("config", "snowpacker")
-  snowpacker.mount_path = File.join("app", "snowpacker")
-  snowpacker.manifest_file = File.join(snowpacker.build_dir, snowpacker.output_dir, "manifest.json")
+  config.config_path = File.join("config", "snowpacker")
+  config.mount_path = File.join("app", "snowpacker")
+  config.manifest_file = File.join(config.build_dir, config.output_dir, "manifest.json")
 
   # Where to find the snowpack config file
-  snowpacker.config_file = File.join(snowpacker.config_path, "snowpack.config.js")
+  config.config_file = File.join(config.config_path, "snowpack.config.js")
 
   # Where to find the babel config file
-  snowpacker.babel_config_file = File.join(snowpacker.config_path, "babel.config.js")
+  config.babel_config_file = File.join(config.config_path, "babel.config.js")
 
   # Where to find the postcss config file
-  snowpacker.postcss_config_file = File.join(snowpacker.config_path, "postcss.config.js")
+  config.postcss_config_file = File.join(config.config_path, "postcss.config.js")
 
   # Where to find your snowpack files
-  snowpacker.entrypoints_dir = "entrypoints"
+  config.entrypoints_dir = "entrypoints"
 
   # What port to run snowpacker with
-  snowpacker.port = "4035"
+  config.port = "4035"
 
   # What hostname to use
-  snowpacker.hostname = "localhost"
+  config.hostname = "localhost"
 
   # Whether or not to use https
   # https://www.snowpack.dev/#https%2Fhttp2
-  snowpacker.https = false
+  config.https = false
 end

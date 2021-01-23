@@ -6,18 +6,12 @@ module Snowpacker
       server = TCPServer.new(hostname, port)
       server.close
     rescue Errno::EADDRINUSE
-      print_port_in_use(port)
+      port_in_use(port)
       exit!
     end
 
-    def rails?
-      return true if defined?(Rails)
-    end
-
     def https?
-      return true if ENV["SNOWPACKER_HTTPS"] == "true"
-
-      false
+      ENV["SNOWPACKER_HTTPS"] == "true"
     end
 
     def dev_server_running?
@@ -34,17 +28,19 @@ module Snowpacker
     def host_with_port
       hostname = Snowpacker.config.hostname
       port = Snowpacker.config.port
+
       "#{hostname}:#{port}"
     end
 
-    private def print_port_in_use(port)
+    private def port_in_use(port)
       error_message = "\nUnable to start snowpacker dev server\n\n"
       info_message = <<-INFO
         Another program is currently running on port: #{port}
         Please use a different port.
       INFO
-      say error_message, :yellow
-      say info_message, :magenta
+
+      Engine::Log.error { error_message }
+      Engine::Log.info { info_message }
     end
   end
 end
