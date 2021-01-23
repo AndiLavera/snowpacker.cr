@@ -1,13 +1,18 @@
+require "socket"
+
 module Snowpacker
   module Utils
+    extend self
+
     def detect_port!
-      hostname = Snowpacker.config.hostname
-      port = Snowpacker.config.port
-      server = TCPServer.new(hostname, port)
+      hostname = Engine.config.hostname
+      port = Engine.config.port
+      server = TCPServer.new(hostname, port.to_i32)
       server.close
-    rescue Errno::EADDRINUSE
+    rescue e : Exception
+      Engine::Log.fatal { e }
       port_in_use(port)
-      exit!
+      exit 1
     end
 
     def https?
@@ -15,8 +20,8 @@ module Snowpacker
     end
 
     def dev_server_running?
-      host = Snowpacker.config.hostname
-      port = Snowpacker.config.port
+      host = Engine.config.hostname
+      port = Engine.config.port
       connect_timeout = 0.01
 
       Socket.tcp(host, port, connect_timeout: connect_timeout).close
@@ -26,8 +31,8 @@ module Snowpacker
     end
 
     def host_with_port
-      hostname = Snowpacker.config.hostname
-      port = Snowpacker.config.port
+      hostname = Engine.config.hostname
+      port = Engine.config.port
 
       "#{hostname}:#{port}"
     end

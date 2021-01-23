@@ -2,7 +2,7 @@
   "name": "snowpack.cr",
   "version": "0.1.0",
   "description": "",
-  "main": "src/snowpack/package/index.js",
+  "main": "src/snowpacker/package/index.js",
   "scripts": {},
   "author": "Andrew Crotwell",
   "license": "MIT",

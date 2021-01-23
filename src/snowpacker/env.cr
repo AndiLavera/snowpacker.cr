@@ -1,9 +1,9 @@
 module Snowpacker
   class Env
-    ENV_PREFIX = "SNOWPACKER".freeze
+    ENV_PREFIX = "SNOWPACKER"
 
     # TODO: Not very programmatic...
-    def self.set_env_variables(config = Snowpack.config)
+    def self.set_env_variables(config = Engine.config)
       set_env("CONFIG_PATH", config.config_path)
       set_env("CONFIG_FILE", config.config_file)
       set_env("BABEL_CONFIG_FILE", config.babel_config_file)

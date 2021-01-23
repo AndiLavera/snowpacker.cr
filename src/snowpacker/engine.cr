@@ -1,3 +1,4 @@
+require "log"
 require "./configuration"
 
 module Snowpacker
@@ -8,6 +9,14 @@ module Snowpacker
 
     def self.instance
       @@instance
+    end
+
+    def self.config
+      if inst = @@instance
+        inst.config
+      else
+        raise EngineNotConfigured.new
+      end
     end
 
     def self.configure(config : Configuration)

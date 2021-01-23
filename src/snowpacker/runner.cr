@@ -18,12 +18,12 @@ module Snowpacker
     def self.dev
       Utils.detect_port!
       Env.set_env_variables
-      snowpacker_command(env = :development, cmd: :dev)
+      self.snowpacker_command(env = :development, cmd: :dev)
     end
 
-    private def snowpacker_command(env = "", cmd = "")
-      env = ENV["NODE_ENV"] || env
-      config_file = Snowpacker.config.config_file
+    private def self.snowpacker_command(env = "", cmd = "")
+      env = ENV["NODE_ENV"]? || env
+      config_file = Engine.config.config_file
       command = "NODE_ENV=#{env} npx run snowpack #{cmd} --config #{config_file}"
 
       system(command)
