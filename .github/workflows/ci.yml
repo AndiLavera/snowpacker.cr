@@ -30,6 +30,11 @@ jobs:
   test_latest:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Node
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt install nodejs
+          npm i -g npx
       - name: Install Crystal
         run: |
           sudo snap install crystal --classic
@@ -43,6 +48,11 @@ jobs:
   test_nightly:
     runs-on: ubuntu-latest
     steps:
+      - name: Install Node
+        run: |
+          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+          sudo apt install nodejs
+          npm i -g npx
       - name: Install Crystal
         run: |
           sudo snap install crystal --classic --edge
