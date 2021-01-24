@@ -2,6 +2,7 @@ require "athena"
 
 module Snowpacker
   class Configuration
+    # :nodoc:
     property athena_listener_priority : Int32 = 200
   end
 
@@ -21,9 +22,11 @@ module Snowpacker
         # fetching local assets. It will return immediately if `Snowpacker.config.enabled`
         # returns `false`.
         def call(event : ART::Events::Request, _dispatcher : AED::EventDispatcherInterface) : Nil
-          # TODO: Fallback if the request method isn't intended for files.
+          # Ensure the server is enabled.
           return unless Snowpacker.config.enabled
+          # Ensure the http method is appropriate for fetching assets.
           return unless event.request.method.in? "GET", "HEAD"
+          # Ensure the path is loaded - Don't want to redirect to files snowpack doesn't load.
           return unless event.request.path.matches? Snowpacker.config.asset_regex
 
           request_path = event.request.path
@@ -36,8 +39,7 @@ module Snowpacker
 
           request_path = Path.posix request_path
 
-          # Ensure the file exists within the projects asset path. If it does not,
-          # snowpack didn't include it.
+          # Redirect to the snowpack dev server
           return event.response = ART::RedirectResponse.new(
             File.join({"http://#{Snowpacker.config.hostname}:#{Snowpacker.config.port}", request_path})
           )
