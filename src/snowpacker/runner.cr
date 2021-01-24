@@ -6,10 +6,6 @@ module Snowpacker
       dev if Snowpacker.config.enabled
     end
 
-    private def build
-      snowpacker_command(cmd: "build")
-    end
-
     # Serve for development
     private def dev
       Utils.detect_port!
