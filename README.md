@@ -2,6 +2,10 @@
 
 Snowpacker.cr wraps around [Snowpack](https://www.snowpack.dev) and turn's on the Snowpack dev server when enabled.
 
+# Docs
+
+[API Docs](https://andrewc910.github.io/snowpacker.cr/index.html)
+
 # Guide
 
 ## Installation
