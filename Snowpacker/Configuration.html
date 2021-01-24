@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="snowpacker">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="snowpacker">
+  <title>Snowpacker::Configuration - snowpacker main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          snowpacker
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="snowpacker/Snowpacker" data-name="snowpacker">
+      <a href="../Snowpacker.html">Snowpacker</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="snowpacker/Snowpacker/Configuration" data-name="snowpacker::configuration">
+      <a href="../Snowpacker/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class=" " data-id="snowpacker/Snowpacker/Engine" data-name="snowpacker::engine">
+      <a href="../Snowpacker/Engine.html">Engine</a>
+      
+    </li>
+  
+  <li class="parent " data-id="snowpacker/Snowpacker/Ext" data-name="snowpacker::ext">
+      <a href="../Snowpacker/Ext.html">Ext</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="snowpacker/Snowpacker/Ext/Athena" data-name="snowpacker::ext::athena">
+      <a href="../Snowpacker/Ext/Athena.html">Athena</a>
+      
+        <ul>
+  
+  <li class=" " data-id="snowpacker/Snowpacker/Ext/Athena/StaticFileListener" data-name="snowpacker::ext::athena::staticfilelistener">
+      <a href="../Snowpacker/Ext/Athena/StaticFileListener.html">StaticFileListener</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Snowpacker::Configuration
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Snowpacker/Configuration.html">Snowpacker::Configuration</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/ext/athena.cr#L4" target="_blank">
+        ext/athena.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L2" target="_blank">
+        snowpacker/configuration.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#asset_regex:Regex-instance-method" class="signature"><strong>#asset_regex</strong> : Regex</a>
+        
+          <div class="summary"><p>The regex snowpacker.cr uses to match assets.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#asset_regex=(asset_regex:Regex)-instance-method" class="signature"><strong>#asset_regex=</strong>(asset_regex : Regex)</a>
+        
+          <div class="summary"><p>The regex snowpacker.cr uses to match assets.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#config_path:String-instance-method" class="signature"><strong>#config_path</strong> : String</a>
+        
+          <div class="summary"><p>The path <code>snowpack.config.js</code> will be loaded from.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#config_path=(config_path:String)-instance-method" class="signature"><strong>#config_path=</strong>(config_path : String)</a>
+        
+          <div class="summary"><p>The path <code>snowpack.config.js</code> will be loaded from.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enabled:Bool-instance-method" class="signature"><strong>#enabled</strong> : Bool</a>
+        
+          <div class="summary"><p>If the dev server & extension middleware should be enabled.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enabled=(enabled:Bool)-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
+        
+          <div class="summary"><p>If the dev server & extension middleware should be enabled.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hostname:String-instance-method" class="signature"><strong>#hostname</strong> : String</a>
+        
+          <div class="summary"><p>The hostname requests will be redirected too.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hostname=(hostname:String)-instance-method" class="signature"><strong>#hostname=</strong>(hostname : String)</a>
+        
+          <div class="summary"><p>The hostname requests will be redirected too.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#node_env:String-instance-method" class="signature"><strong>#node_env</strong> : String</a>
+        
+          <div class="summary"><p>The <code>NODE_ENV</code> that will be prepended to the command starting the snowpack dev server.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#node_env=(node_env:String)-instance-method" class="signature"><strong>#node_env=</strong>(node_env : String)</a>
+        
+          <div class="summary"><p>The <code>NODE_ENV</code> that will be prepended to the command starting the snowpack dev server.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port:Int32-instance-method" class="signature"><strong>#port</strong> : Int32</a>
+        
+          <div class="summary"><p>The port requests will be redirected too.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#port=(port:Int32)-instance-method" class="signature"><strong>#port=</strong>(port : Int32)</a>
+        
+          <div class="summary"><p>The port requests will be redirected too.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="asset_regex:Regex-instance-method">
+      <div class="signature">
+        
+        def <strong>asset_regex</strong> : Regex
+
+        <a class="method-permalink" href="#asset_regex:Regex-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The regex snowpacker.cr uses to match assets. If a request matches this, the request will be
+redirected to snowpacks dev server. The default regex should be fine for most use cases but
+this configuration is exposed for advanced use cases.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="asset_regex=(asset_regex:Regex)-instance-method">
+      <div class="signature">
+        
+        def <strong>asset_regex=</strong>(asset_regex : Regex)
+
+        <a class="method-permalink" href="#asset_regex=(asset_regex:Regex)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The regex snowpacker.cr uses to match assets. If a request matches this, the request will be
+redirected to snowpacks dev server. The default regex should be fine for most use cases but
+this configuration is exposed for advanced use cases.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="config_path:String-instance-method">
+      <div class="signature">
+        
+        def <strong>config_path</strong> : String
+
+        <a class="method-permalink" href="#config_path:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The path <code>snowpack.config.js</code> will be loaded from.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="config_path=(config_path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>config_path=</strong>(config_path : String)
+
+        <a class="method-permalink" href="#config_path=(config_path:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The path <code>snowpack.config.js</code> will be loaded from.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enabled:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>enabled</strong> : Bool
+
+        <a class="method-permalink" href="#enabled:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If the dev server & extension middleware should be enabled. Ensure this is <code>true</code> when you
+want the dev server to run. Set <code>false</code> in production.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enabled=(enabled:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>enabled=</strong>(enabled : Bool)
+
+        <a class="method-permalink" href="#enabled=(enabled:Bool)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If the dev server & extension middleware should be enabled. Ensure this is <code>true</code> when you
+want the dev server to run. Set <code>false</code> in production.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hostname:String-instance-method">
+      <div class="signature">
+        
+        def <strong>hostname</strong> : String
+
+        <a class="method-permalink" href="#hostname:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The hostname requests will be redirected too. This does NOT change the hostname snowpack actually runs on.
+Make sure this matches the hostname in your <code>snowpack.config.js</code> file. Snowpack defaults to <code>localhost</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hostname=(hostname:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>hostname=</strong>(hostname : String)
+
+        <a class="method-permalink" href="#hostname=(hostname:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The hostname requests will be redirected too. This does NOT change the hostname snowpack actually runs on.
+Make sure this matches the hostname in your <code>snowpack.config.js</code> file. Snowpack defaults to <code>localhost</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="node_env:String-instance-method">
+      <div class="signature">
+        
+        def <strong>node_env</strong> : String
+
+        <a class="method-permalink" href="#node_env:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The <code>NODE_ENV</code> that will be prepended to the command starting the snowpack dev server. This can
+be overwritten via Crystal's environment variables with <code>ENV["NODE_ENV"] = "my_env"</code> if you
+would prefer.</p>
+
+<p>Crystal nor Node can access environment variables outside of their process for safety reasons.
+Because of this, snowpacker.cr prepends the env to the command.</p>
+
+<p>Example: `"NODE_ENV=#{Snowpacker.config.node_env} npx snowpack #{cmd}"</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="node_env=(node_env:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>node_env=</strong>(node_env : String)
+
+        <a class="method-permalink" href="#node_env=(node_env:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The <code>NODE_ENV</code> that will be prepended to the command starting the snowpack dev server. This can
+be overwritten via Crystal's environment variables with <code>ENV["NODE_ENV"] = "my_env"</code> if you
+would prefer.</p>
+
+<p>Crystal nor Node can access environment variables outside of their process for safety reasons.
+Because of this, snowpacker.cr prepends the env to the command.</p>
+
+<p>Example: `"NODE_ENV=#{Snowpacker.config.node_env} npx snowpack #{cmd}"</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>port</strong> : Int32
+
+        <a class="method-permalink" href="#port:Int32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The port requests will be redirected too. This does NOT change the port snowpack actually runs on.
+Make sure this matches the port in your <code>snowpack.config.js</code> file. Snowpack defaults to <code>8080</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="port=(port:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>port=</strong>(port : Int32)
+
+        <a class="method-permalink" href="#port=(port:Int32)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The port requests will be redirected too. This does NOT change the port snowpack actually runs on.
+Make sure this matches the port in your <code>snowpack.config.js</code> file. Snowpack defaults to <code>8080</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/191b4440b7b9165b9b66116be0b57d0bccec0e59/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
