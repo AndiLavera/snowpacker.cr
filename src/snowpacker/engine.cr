@@ -29,33 +29,40 @@ module Snowpacker
 
     # Configuration method for snowpacker.cr.
     #
-    # Usage:
+    # **Usage**:
     #
     # ```crystal
-    # Snowpacker::Engine.configure do |config|
-    #   config.build_dir = "public"
+    # # Snowpacker::Engine.configure do |config|
+    #   # If the dev server & extension middleware should be enabled. Ensure this is `true` when you
+    #   # want the dev server to run. Set `false` in production.
+    #   config.enabled = ENV["MY_SERVER_ENV"]? == "development"
     #
-    #   config.output_dir = "snowpacker"
+    #   # The path `snowpack.config.js` will be loaded from.
+    #   # config.config_path = Dir.current
     #
-    #   config.config_path = File.join("config", "snowpacker")
+    #   # The port requests will be redirected too. This does NOT change the port snowpack actually runs on.
+    #   # Make sure this matches the port in your `snowpack.config.js` file. Snowpack defaults to `8080`.
+    #   # config.port = 8080
     #
-    #   config.mount_path = File.join("app", "snowpacker")
+    #   # The hostname requests will be redirected too. This does NOT change the hostname snowpack actually
+    #   # runs on. Make sure this matches the hostname in your `snowpack.config.js` file.
+    #   # Snowpack defaults to `localhost`.
+    #   # config.hostname = "localhost"
     #
-    #   config.manifest_file = File.join(config.build_dir, config.output_dir, "manifest.json")
+    #   # The `NODE_ENV` that will be prepended to the command starting the snowpack dev server. This can
+    #   # be overwritten via Crystal's environment variables with `ENV["NODE_ENV"] = "my_env"` if you
+    #   # would prefer.
+    #   #
+    #   # Crystal nor Node can access environment variables outside of their process for safety reasons.
+    #   # Because of this, snowpacker.cr prepends the env to the command.
+    #   #
+    #   # Example: `"NODE_ENV=#{Snowpacker.config.node_env} npx snowpack #{cmd}"
+    #   # config.node_env = "development"
     #
-    #   config.config_file = File.join(config.config_path, "snowpack.config.js")
-    #
-    #   config.babel_config_file = File.join(config.config_path, "babel.config.js")
-    #
-    #   config.postcss_config_file = File.join(config.config_path, "postcss.config.js")
-    #
-    #   config.entrypoints_dir = "entrypoints"
-    #
-    #   config.port = "4035"
-    #
-    #   config.hostname = "localhost"
-    #
-    #   config.https = false
+    #   # The regex snowpacker.cr uses to match assets. If a request matches this, the request will be
+    #   # redirected to snowpacks dev server. The default regex should be fine for most use cases but
+    #   # this configuration is exposed for advanced use cases.
+    #   # config.asset_regex = /.(css|scss|sass|less|js|ts|jsx|tsx|ico|jpg|jpeg|png|webp|svg)/
     # end
     # ```
     def self.configure(&block)

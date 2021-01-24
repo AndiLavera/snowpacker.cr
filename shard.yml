@@ -12,4 +12,8 @@ development_dependencies:
     github: veelenga/ameba
     version: 0.13.3
 
+  athena:
+    github: athena-framework/athena
+    branch: master
+
 license: MIT

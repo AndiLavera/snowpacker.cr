@@ -1,6 +1,7 @@
 require "socket"
 
 module Snowpacker
+  # :nodoc:
   module Utils
     extend self
 
