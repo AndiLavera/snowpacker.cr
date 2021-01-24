@@ -10,7 +10,7 @@ module Snowpacker
       end
 
       begin
-        sleep 1 # Wait for any process to die
+        sleep 2 # Wait for any process to die
         Utils.detect_port!.should be_true
         process = Engine.run
         sleep 2 # Wait for the process to turn on

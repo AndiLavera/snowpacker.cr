@@ -8,6 +8,7 @@ module Snowpacker
         config.enabled = true
       end
 
+      sleep 2 # Wait for any process to die
       begin
         process = Engine.run
         process.should_not be_nil
