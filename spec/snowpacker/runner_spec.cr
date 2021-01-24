@@ -25,7 +25,7 @@ module Snowpacker
       begin
         sleep 2 # Wait for any process to die
         process = Engine.run
-        sleep 2 # Wait for the process to turn on
+        sleep 3 # Wait for the process to turn on
         process2 = Engine.run
 
         process.should_not be_nil
