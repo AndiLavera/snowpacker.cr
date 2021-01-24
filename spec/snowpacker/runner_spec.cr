@@ -3,16 +3,36 @@ require "../spec_helper"
 module Snowpacker
   describe Runner do
     it "can run dev" do
-      engine = Engine.configure do |config|
-        config.config_path = "public"
-        config.port = 4444
-        config.hostname = "1.1.1.1"
+      Engine.configure do |config|
+        config.config_path = "spec"
         config.enabled = true
-        config.node_env = "production"
-        config.asset_regex = /.js/
       end
 
-      Engine.run
+      begin
+        process = Engine.run
+        process.should_not be_nil
+      ensure
+        process.signal(Signal::KILL) if process
+      end
+    end
+
+    it "can handle tcp in use" do
+      Engine.configure do |config|
+        config.config_path = "spec"
+        config.enabled = true
+      end
+
+      begin
+        process = Engine.run
+        sleep 2 # Wait for the process to turn on
+        process2 = Engine.run
+
+        process.should_not be_nil
+        process2.should be_nil
+      ensure
+        process.signal(Signal::KILL) if process
+        process2.signal(Signal::KILL) if process2
+      end
     end
   end
 end

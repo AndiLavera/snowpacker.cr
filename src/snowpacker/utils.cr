@@ -5,48 +5,18 @@ module Snowpacker
   module Utils
     extend self
 
-    def detect_port!
+    # :nodoc:
+    def detect_port! : Bool
       hostname = Snowpacker.config.hostname
       port = Snowpacker.config.port
-      server = TCPServer.new(hostname, port.to_i32)
+      server = TCPServer.new(hostname, port)
       server.close
-    rescue e : Exception
-      Engine::Log.fatal { e }
-      port_in_use(port)
-      exit 1
-    end
 
-    def https?
-      ENV["SNOWPACKER_HTTPS"] == "true"
-    end
-
-    def dev_server_running?
-      host = Snowpacker.config.hostname
-      port = Snowpacker.config.port
-      connect_timeout = 0.01
-
-      Socket.tcp(host, port, connect_timeout: connect_timeout).close
       true
-    rescue Errno::ECONNREFUSED
+    rescue e : Socket::BindError
+      Engine::Log.error { e }
+
       false
-    end
-
-    def host_with_port
-      hostname = Snowpacker.config.hostname
-      port = Snowpacker.config.port
-
-      "#{hostname}:#{port}"
-    end
-
-    private def port_in_use(port)
-      error_message = "\nUnable to start snowpacker dev server\n\n"
-      info_message = <<-INFO
-        Another program is currently running on port: #{port}
-        Please use a different port.
-      INFO
-
-      Engine::Log.error { error_message }
-      Engine::Log.info { info_message }
     end
   end
 end
