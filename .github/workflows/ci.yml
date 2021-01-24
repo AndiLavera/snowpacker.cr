@@ -34,8 +34,8 @@ jobs:
         run: |
           curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
           sudo apt install nodejs
-          npm i -g npx
-          npm install
+          sudo npm i -g npx
+          sudo npm install
       - name: Install Crystal
         run: |
           sudo snap install crystal --classic
@@ -53,8 +53,8 @@ jobs:
         run: |
           curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
           sudo apt install nodejs
-          npm i -g npx
-          npm install
+          sudo npm i -g npx
+          sudo npm install
       - name: Install Crystal
         run: |
           sudo snap install crystal --classic --edge
