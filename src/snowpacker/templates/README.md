@@ -1,0 +1,1 @@
+These come from snowpacker ruby. I am leaving them for now but they are not in use. I wanted a way to create a snowpack.config.js file for the user through ecr but that some procs & cons. Some of the cons are more maintinence and snowpacker.cr must implement the entire config api

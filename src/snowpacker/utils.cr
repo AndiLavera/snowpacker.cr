@@ -5,8 +5,8 @@ module Snowpacker
     extend self
 
     def detect_port!
-      hostname = Engine.config.hostname
-      port = Engine.config.port
+      hostname = Snowpacker.config.hostname
+      port = Snowpacker.config.port
       server = TCPServer.new(hostname, port.to_i32)
       server.close
     rescue e : Exception
@@ -20,8 +20,8 @@ module Snowpacker
     end
 
     def dev_server_running?
-      host = Engine.config.hostname
-      port = Engine.config.port
+      host = Snowpacker.config.hostname
+      port = Snowpacker.config.port
       connect_timeout = 0.01
 
       Socket.tcp(host, port, connect_timeout: connect_timeout).close
@@ -31,8 +31,8 @@ module Snowpacker
     end
 
     def host_with_port
-      hostname = Engine.config.hostname
-      port = Engine.config.port
+      hostname = Snowpacker.config.hostname
+      port = Snowpacker.config.port
 
       "#{hostname}:#{port}"
     end

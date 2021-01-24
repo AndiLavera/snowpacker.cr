@@ -19,21 +19,12 @@ module Snowpacker
       @@instance || raise EngineNotConfigured.new
     end
 
-    # :nodoc:
-    def self.config
-      Engine.instance.config
-    end
-
-    def self.configure(config : Configuration)
-      @@instance ||= new(config)
-    end
-
     def self.run
       instance = Engine.instance
       instance.runner.run
     rescue EngineNotConfigured
-      instance = Engine.configure(Configuration.new)
-      instance.runner.run
+      @@instance = new(Configuration.new)
+      Engine.instance.runner.run
     end
 
     # Configuration method for snowpacker.cr.
@@ -72,7 +63,8 @@ module Snowpacker
 
       config = Configuration.new
       yield config
-      Engine.configure(config)
+
+      @@instance = new(config)
     end
 
     # :nodoc:

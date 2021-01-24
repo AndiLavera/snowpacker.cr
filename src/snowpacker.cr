@@ -1,6 +1,5 @@
 module Snowpacker
-  VERSION     = "0.1.0"
-  ASSET_REGEX = /.(css|scss|sass|less|js|ts|jsx|tsx|ico|jpg|jpeg|png|webp|svg)/
+  VERSION = "0.1.0"
 
   def self.config
     Engine.instance.config
