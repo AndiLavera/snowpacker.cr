@@ -1,6 +1,6 @@
 # Snowpacker.cr
 
-Snowpacker.cr wraps around [Snowpack](https://www.snowpack.dev) and turn's on the Snowpack dev server when enabled.
+Snowpacker.cr wraps around [Snowpack](https://www.snowpack.dev) and turns on the Snowpack dev server when enabled. This shard really just forgos the need to run Snowpack in a separate terminal. Along with that, it has a few ext's so you can integrate it with your preferred framework without having to manually set up the proxying.
 
 # Docs
 
