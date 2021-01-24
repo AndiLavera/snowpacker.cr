@@ -21,7 +21,7 @@ module Snowpacker
     end
 
     it "cannot be configured twice" do
-      engine = Engine.configure do |config|
+      Engine.configure do |config|
         config.config_path = "public"
         config.port = 4444
         config.hostname = "1.1.1.1"

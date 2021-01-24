@@ -40,7 +40,7 @@ module Snowpacker
           request_path = Path.posix request_path
 
           # Redirect to the snowpack dev server
-          return event.response = ART::RedirectResponse.new(
+          event.response = ART::RedirectResponse.new(
             File.join({"http://#{Snowpacker.config.hostname}:#{Snowpacker.config.port}", request_path})
           )
         end
