@@ -23,6 +23,7 @@ module Snowpacker
       end
 
       begin
+        sleep 2 # Wait for any process to die
         process = Engine.run
         sleep 2 # Wait for the process to turn on
         process2 = Engine.run
