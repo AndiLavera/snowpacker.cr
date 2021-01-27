@@ -45,6 +45,56 @@ module Snowpacker
           )
         end
       end
+
+      @[ADI::Register]
+      struct HMRInjector
+        include AED::EventListenerInterface
+
+        def self.subscribed_events : AED::SubscribedEvents
+          AED::SubscribedEvents{
+            ART::Events::Response => Snowpacker.config.athena_listener_priority,
+          }
+        end
+
+        # Proxy listener for athena based projects. This does not handle
+        # fetching local assets. It will return immediately if `Snowpacker.config.enabled`
+        # returns `false`.
+        def call(event : ART::Events::Response, _dispatcher : AED::EventDispatcherInterface) : Nil
+          # Ensure the server is enabled.
+          return unless Snowpacker.config.enabled
+          # Only inject if HMR is enabled
+          return unless Snowpacker.config.hmr
+          # Ensure the http method is appropriate for fetching assets.
+          return unless event.request.method.in? "GET", "HEAD"
+          # Ensure we only inject the script tags into html.
+          content_type = event.response.headers["content-type"]?
+          return unless content_type
+          return unless content_type.includes? "text/html"
+
+          content = event.response.content
+          unless content.matches? Snowpacker.config.hmr_matching_regex
+            Engine::Log.warn do
+              "Could not inject HMR scripts. Could not find </html> or </ html> tag."
+            end
+
+            return
+          end
+
+          event.response.content = content.gsub(
+            Snowpacker.config.hmr_matching_regex,
+            <<-STR
+            <!--
+              HMR Scripts for snowpack. Snowpacker.cr injects these during the response phase. To disable, set `hmr` in the config dsl to false.
+            -->
+            <script>
+              window.HMR_WEBSOCKET_URL = 'ws://#{Snowpacker.config.hostname}:#{Snowpacker.config.port}'
+            </script>
+            <script src="_snowpack/hmr-client.js" type="module" defer></script>
+            </html>
+            STR
+          )
+        end
+      end
     end
   end
 end
