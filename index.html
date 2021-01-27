@@ -218,6 +218,16 @@ module.exports = {
   <span class="c"># redirected to snowpacks dev server. The default regex should be fine for most use cases but</span>
   <span class="c"># this configuration is exposed for advanced use cases.</span>
   <span class="c"># config.asset_regex = /.(css|scss|sass|less|js|ts|jsx|tsx|ico|jpg|jpeg|png|webp|svg)/</span>
+
+  <span class="c"># Enables/Disables Hot Module Reloading. Snowpacker will inject the neccessary HMR scripts into</span>
+  <span class="c"># a HTML document.</span>
+  <span class="c"># property hmr = true</span>
+
+  <span class="c"># The regex used to locate where the HMR scripts should be injected. You shouldn&#39;t typically</span>
+  <span class="c"># need to change this. Snowpacker, by default, injects the scripts at the bottom of your HTML</span>
+  <span class="c"># document so they load last. Change this value to something else if you would like the scripts</span>
+  <span class="c"># to injected into a different location.</span>
+  <span class="c"># property hmr_matching_regex = /&lt;\/ ?html&gt;/</span>
 <span class="k">end</span>
 
 <span class="c"># Starts a new process in the background. This is safe to leave as is. If `Snowpacker.config.enabled`</span>
