@@ -18,7 +18,7 @@
 </svg>
 
   <meta id="repository-name" content="snowpacker">
-  <title>Snowpacker::Ext::Athena::StaticFileListener - snowpacker main</title>
+  <title>Snowpacker::Ext::Athena::HMRInjector - snowpacker main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../../";
   </script>
@@ -76,12 +76,12 @@
       
         <ul>
   
-  <li class=" " data-id="snowpacker/Snowpacker/Ext/Athena/HMRInjector" data-name="snowpacker::ext::athena::hmrinjector">
+  <li class=" current" data-id="snowpacker/Snowpacker/Ext/Athena/HMRInjector" data-name="snowpacker::ext::athena::hmrinjector">
       <a href="../../../Snowpacker/Ext/Athena/HMRInjector.html">HMRInjector</a>
       
     </li>
   
-  <li class=" current" data-id="snowpacker/Snowpacker/Ext/Athena/StaticFileListener" data-name="snowpacker::ext::athena::staticfilelistener">
+  <li class=" " data-id="snowpacker/Snowpacker/Ext/Athena/StaticFileListener" data-name="snowpacker::ext::athena::staticfilelistener">
       <a href="../../../Snowpacker/Ext/Athena/StaticFileListener.html">StaticFileListener</a>
       
     </li>
@@ -110,12 +110,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Snowpacker::Ext::Athena::StaticFileListener
+  <span class="kind">struct</span> Snowpacker::Ext::Athena::HMRInjector
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../../Snowpacker/Ext/Athena/StaticFileListener.html">Snowpacker::Ext::Athena::StaticFileListener</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../../Snowpacker/Ext/Athena/HMRInjector.html">Snowpacker::Ext::Athena::HMRInjector</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -157,7 +157,7 @@
   </h2>
   
     
-      <a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L12" target="_blank">
+      <a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L50" target="_blank">
         ext/athena.cr
       </a>
     
@@ -217,7 +217,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call(event:ART::Events::Request,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method" class="signature"><strong>#call</strong>(event : ART::Events::Request, _dispatcher : AED::EventDispatcherInterface) : Nil</a>
+        <a href="#call(event:ART::Events::Response,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method" class="signature"><strong>#call</strong>(event : ART::Events::Response, _dispatcher : AED::EventDispatcherInterface) : Nil</a>
         
           <div class="summary"><p>Proxy listener for athena based projects.</p></div>
         
@@ -294,7 +294,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -322,7 +322,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -339,12 +339,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="call(event:ART::Events::Request,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method">
+    <div class="entry-detail" id="call(event:ART::Events::Response,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method">
       <div class="signature">
         
-        def <strong>call</strong>(event : ART::Events::Request, _dispatcher : AED::EventDispatcherInterface) : Nil
+        def <strong>call</strong>(event : ART::Events::Response, _dispatcher : AED::EventDispatcherInterface) : Nil
 
-        <a class="method-permalink" href="#call(event:ART::Events::Request,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method">#</a>
+        <a class="method-permalink" href="#call(event:ART::Events::Response,_dispatcher:AED::EventDispatcherInterface):Nil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -357,7 +357,7 @@ returns <code>false</code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>

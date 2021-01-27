@@ -76,6 +76,11 @@
       
         <ul>
   
+  <li class=" " data-id="snowpacker/Snowpacker/Ext/Athena/HMRInjector" data-name="snowpacker::ext::athena::hmrinjector">
+      <a href="../Snowpacker/Ext/Athena/HMRInjector.html">HMRInjector</a>
+      
+    </li>
+  
   <li class=" " data-id="snowpacker/Snowpacker/Ext/Athena/StaticFileListener" data-name="snowpacker::ext::athena::staticfilelistener">
       <a href="../Snowpacker/Ext/Athena/StaticFileListener.html">StaticFileListener</a>
       
@@ -138,14 +143,14 @@
   </h2>
   
     
-      <a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/ext/athena.cr#L4" target="_blank">
+      <a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/ext/athena.cr#L4" target="_blank">
         ext/athena.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L2" target="_blank">
+      <a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L2" target="_blank">
         snowpacker/configuration.cr
       </a>
     
@@ -209,6 +214,34 @@
         <a href="#enabled=(enabled:Bool)-instance-method" class="signature"><strong>#enabled=</strong>(enabled : Bool)</a>
         
           <div class="summary"><p>If the dev server & extension middleware should be enabled.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hmr:Bool-instance-method" class="signature"><strong>#hmr</strong> : Bool</a>
+        
+          <div class="summary"><p>Enables/Disables Hot Module Reloading.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hmr=(hmr:Bool)-instance-method" class="signature"><strong>#hmr=</strong>(hmr : Bool)</a>
+        
+          <div class="summary"><p>Enables/Disables Hot Module Reloading.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hmr_matching_regex:Regex-instance-method" class="signature"><strong>#hmr_matching_regex</strong> : Regex</a>
+        
+          <div class="summary"><p>The regex used to locate where the HMR scripts should be injected.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hmr_matching_regex=(hmr_matching_regex:Regex)-instance-method" class="signature"><strong>#hmr_matching_regex=</strong>(hmr_matching_regex : Regex)</a>
+        
+          <div class="summary"><p>The regex used to locate where the HMR scripts should be injected.</p></div>
         
       </li>
     
@@ -316,7 +349,7 @@ this configuration is exposed for advanced use cases.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -339,7 +372,7 @@ this configuration is exposed for advanced use cases.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -360,7 +393,7 @@ this configuration is exposed for advanced use cases.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -381,7 +414,7 @@ this configuration is exposed for advanced use cases.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -403,7 +436,7 @@ want the dev server to run. Set <code>false</code> in production.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -425,7 +458,99 @@ want the dev server to run. Set <code>false</code> in production.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hmr:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>hmr</strong> : Bool
+
+        <a class="method-permalink" href="#hmr:Bool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enables/Disables Hot Module Reloading. Snowpacker will inject the neccessary HMR scripts into
+a HTML document.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hmr=(hmr:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>hmr=</strong>(hmr : Bool)
+
+        <a class="method-permalink" href="#hmr=(hmr:Bool)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Enables/Disables Hot Module Reloading. Snowpacker will inject the neccessary HMR scripts into
+a HTML document.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hmr_matching_regex:Regex-instance-method">
+      <div class="signature">
+        
+        def <strong>hmr_matching_regex</strong> : Regex
+
+        <a class="method-permalink" href="#hmr_matching_regex:Regex-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The regex used to locate where the HMR scripts should be injected. You shouldn't typically
+need to change this. Snowpacker, by default, injects the scripts at the bottom of your HTML
+document so they load last. Change this value to something else if you would like the scripts
+to injected into a different location.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hmr_matching_regex=(hmr_matching_regex:Regex)-instance-method">
+      <div class="signature">
+        
+        def <strong>hmr_matching_regex=</strong>(hmr_matching_regex : Regex)
+
+        <a class="method-permalink" href="#hmr_matching_regex=(hmr_matching_regex:Regex)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The regex used to locate where the HMR scripts should be injected. You shouldn't typically
+need to change this. Snowpacker, by default, injects the scripts at the bottom of your HTML
+document so they load last. Change this value to something else if you would like the scripts
+to injected into a different location.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -447,7 +572,7 @@ Make sure this matches the hostname in your <code>snowpack.config.js</code> file
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -469,7 +594,7 @@ Make sure this matches the hostname in your <code>snowpack.config.js</code> file
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -497,7 +622,7 @@ Because of this, snowpacker.cr prepends the env to the command.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -525,7 +650,7 @@ Because of this, snowpacker.cr prepends the env to the command.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -547,7 +672,7 @@ Make sure this matches the port in your <code>snowpack.config.js</code> file. Sn
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -569,7 +694,7 @@ Make sure this matches the port in your <code>snowpack.config.js</code> file. Sn
       <br/>
       <div>
         
-          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/434c9b90e6f6cc0f4984bf6954d55461874a7aaf/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/andrewc910/snowpacker.cr/blob/2af11cabd3369c812d3c997438e9063a9219c2bf/src/snowpacker/configuration.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
