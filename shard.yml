@@ -1,6 +1,8 @@
 name: snowpacker
 version: 0.1.0
 
+crystal: ">= 0.36.0"
+
 authors:
   - Andrew Crotwell <awcrotwell@gmail.com>
 
