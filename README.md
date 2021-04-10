@@ -52,6 +52,12 @@ module.exports = {
   buildOptions: {
     out: "public/dist", // The folder assets will be written to after building
   },
+  optimize: {
+    bundle: true,
+    minify: true,
+    target: 'es2018',
+    entrypoints: ['src/assets/index.js']
+  },
 };
 ```
 
